@@ -1,5 +1,5 @@
 #   Below is my third attempt at a cookie clicker algorithm. Seeing how many cookies per second we can reach in 5 mins!
-#   This attempt buys the most expensive available upgrade after each 8 second interval... Shorter than the previous
+#   This attempt buys the most expensive available upgrade after each 8 second interval... Longer than the previous
 #   interval! Let's see if it makes an impact!
 #   My C/S score for this attempt was 109.2! Way better!
 
@@ -16,12 +16,14 @@ s=Service("/Users/finnhewes/Developing/chromedriver")
 browser = webdriver.Chrome(service=s)
 browser.get("http://orteil.dashnet.org/experiments/cookie/")
 
+interval = 8
+
 ###############################################################################################
 
 cookie = browser.find_element(By.ID, "cookie")      # finds cookie item to click on
 store_items = browser.find_elements(By.CSS_SELECTOR, "#store div")    #  a list of all upgrades in the store
 item_ids = [item.get_attribute("id") for item in store_items]       #  a list of the upgrades' individual item ids
-timeout = time.time() + 8       # EIGHT SECOND TIMER
+timeout = time.time() + interval       # EIGHT SECOND TIMER
 five_min = time.time() + 60*5   # FIVE MINUTE TIMER:
         # AFTER the five-minute timer has elapsed, we will stop clicking and print out cookies/sec
 
@@ -69,7 +71,7 @@ while keep_going:
         except ValueError:
             pass
         finally:
-            timeout = time.time() + 8   # basically resets the 8-second cycle timer
+            timeout = time.time() + interval  # basically resets the 8-second cycle timer
 
 
     #After 5 minutes stop the bot and check the cookies per second count.
