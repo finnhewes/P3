@@ -1,4 +1,4 @@
-#   Below is my third attempt at a cookie clicker algorithm. Seeing how many cookies per second we can reach in 5 mins!
+#   Below is my fourth attempt at a cookie clicker algorithm. Seeing how many cookies per second we can reach in 5 mins!
 #   This attempt buys the most expensive available upgrade after each 8 second interval... Longer than the previous
 #   interval! Let's see if it makes an impact!
 #   My C/S score for this attempt was 109.2! Way better!
