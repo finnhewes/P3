@@ -30,7 +30,7 @@ keep_going = True
 while keep_going:
     cookie.click()
     click_count += 1
-    # every 250 clicks, we will buy all the upgrades we can afford, starting with the most expensive.
+    # every 250 clicks, we will buy the most expensive upgrade we can afford.
     if click_count%250 == 0:
         # getting our "cash", or cookies we can spend, and converting to an int
         cash = browser.find_element(By.ID, "money").text
