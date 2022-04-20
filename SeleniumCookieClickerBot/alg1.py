@@ -1,4 +1,6 @@
 #   Below is my first attempt at a cookie clicker algorithm. Seeing how many cookies per second we can reach in 5 mins!
+#   This attempt buys the most expensive available upgrade after each 250 clicks... 
+#   My C/S score for this attempt was 57.6... Mediocre at best!
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
